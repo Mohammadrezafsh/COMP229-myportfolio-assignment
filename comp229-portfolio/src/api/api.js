@@ -16,11 +16,6 @@ export async function getItems(resource) {
   return handleResponse(response);
 }
 
-export async function getItemById(resource, id) {
-  const response = await fetch(`${API_BASE_URL}/api/${resource}/${id}`);
-  return handleResponse(response);
-}
-
 export async function createItem(resource, payload) {
   const response = await fetch(`${API_BASE_URL}/api/${resource}`, {
     method: "POST",
@@ -52,5 +47,3 @@ export async function deleteItem(resource, id) {
 
   return handleResponse(response);
 }
-
-export { API_BASE_URL };

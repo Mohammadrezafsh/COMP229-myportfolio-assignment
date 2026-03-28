@@ -42,11 +42,13 @@ export default function Dashboard() {
             title: "",
             completion: "",
             description: "",
+            imageUrl: "",
           }}
           fields={[
             { name: "title", label: "Title" },
             { name: "completion", label: "Completion Date", type: "date" },
             { name: "description", label: "Description", type: "textarea", rows: 5 },
+            { name: "imageUrl", label: "Project Image", type: "file", required: false },
           ]}
         />
       ) : null}
@@ -59,10 +61,12 @@ export default function Dashboard() {
           emptyForm={{
             title: "",
             description: "",
+            imageUrl: "",
           }}
           fields={[
             { name: "title", label: "Title" },
             { name: "description", label: "Description", type: "textarea", rows: 5 },
+            { name: "imageUrl", label: "Service Image", type: "file", required: false },
           ]}
         />
       ) : null}

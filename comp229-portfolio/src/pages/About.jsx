@@ -32,7 +32,7 @@ export default function About() {
               Currently expanding my expertise in full-stack development, artificial intelligence, and database design.
             </p>
 
-            <a className="btn primary" href="/resume.pdf" target="_blank" rel="noreferrer" style={{ marginTop: '20px' }}>
+            <a className="btn primary aboutResumeBtn" href="/resume.pdf" target="_blank" rel="noreferrer">
               View Resume (PDF)
             </a>
           </div>
