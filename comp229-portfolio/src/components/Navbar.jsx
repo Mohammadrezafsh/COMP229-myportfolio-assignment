@@ -47,6 +47,12 @@ export default function Navbar() {
           >
             Contact
           </NavLink>
+          <NavLink
+            to="/dashboard"
+            className={({ isActive }) => (isActive ? "link active" : "link")}
+          >
+            Dashboard
+          </NavLink>
         </nav>
       </div>
     </header>

@@ -1,26 +1,30 @@
 /*
  * File: Contact.jsx
- * Purpose: Contact page with contact information panel and interactive message form
- * Features: Captures user input (First Name, Last Name, Email, Phone, Message) and redirects to Home
+ * Purpose: Contact page with contact information panel and interactive form
+ * Features: Captures reference data and stores it in the backend database
  * Author: Mohammad Reza Faghih Shojaei
  * Date: February 2026
  */
 
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { createItem } from "../api/api";
 
-// Contact component - displays contact info and handles form submission
+// Contact component - displays contact info and handles form submission to backend
 export default function Contact() {
   const navigate = useNavigate();
 
   // Form state management - stores all user input fields
   const [form, setForm] = useState({
-    firstName: "",
-    lastName: "",
-    phone: "",
+    firstname: "",
+    lastname: "",
     email: "",
-    message: "",
+    position: "",
+    company: "",
   });
+
+  const [saving, setSaving] = useState(false);
+  const [error, setError] = useState("");
 
   // Handle input changes and update form state
   function handleChange(e) {
@@ -28,17 +32,24 @@ export default function Contact() {
     setForm((prev) => ({ ...prev, [name]: value }));
   }
 
-  // Handle form submission - captures data and redirects to Home page
-  function handleSubmit(e) {
+  // Handle form submission - sends data to backend and redirects to Home page
+  async function handleSubmit(e) {
     e.preventDefault();
 
-    // Capture form data
-    sessionStorage.setItem("contactForm", JSON.stringify(form));
+    try {
+      setSaving(true);
+      setError("");
 
-    // Redirect to Home page with success message
-    navigate("/", {
-      state: { message: "Thank you for your message! I'll get back to you soon." },
-    });
+      await createItem("references", form);
+
+      navigate("/", {
+        state: { message: "Thank you. Your reference entry was saved successfully." },
+      });
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setSaving(false);
+    }
   }
 
   return (
@@ -66,24 +77,26 @@ export default function Contact() {
         </aside>
 
         <form className="card formCard" onSubmit={handleSubmit}>
+          {error ? <div className="errorBox">{error}</div> : null}
+
           <div className="twoCol">
             <div className="field">
-              <label htmlFor="firstName">First Name</label>
+              <label htmlFor="firstname">First Name</label>
               <input
-                id="firstName"
-                name="firstName"
-                value={form.firstName}
+                id="firstname"
+                name="firstname"
+                value={form.firstname}
                 onChange={handleChange}
                 required
               />
             </div>
 
             <div className="field">
-              <label htmlFor="lastName">Last Name</label>
+              <label htmlFor="lastname">Last Name</label>
               <input
-                id="lastName"
-                name="lastName"
-                value={form.lastName}
+                id="lastname"
+                name="lastname"
+                value={form.lastname}
                 onChange={handleChange}
                 required
               />
@@ -91,16 +104,6 @@ export default function Contact() {
           </div>
 
           <div className="twoCol">
-            <div className="field">
-              <label htmlFor="phone">Contact Number</label>
-              <input
-                id="phone"
-                name="phone"
-                value={form.phone}
-                onChange={handleChange}
-              />
-            </div>
-
             <div className="field">
               <label htmlFor="email">Email Address</label>
               <input
@@ -112,24 +115,33 @@ export default function Contact() {
                 required
               />
             </div>
+
+            <div className="field">
+              <label htmlFor="position">Position</label>
+              <input
+                id="position"
+                name="position"
+                value={form.position}
+                onChange={handleChange}
+                required
+              />
+            </div>
           </div>
 
           <div className="field">
-            <label htmlFor="message">Message</label>
-            <textarea
-              id="message"
-              name="message"
-              rows="5"
-              value={form.message}
+            <label htmlFor="company">Company</label>
+            <input
+              id="company"
+              name="company"
+              value={form.company}
               onChange={handleChange}
               required
             />
           </div>
 
-          <button className="btn primary" type="submit">
-            Send Message
+          <button className="btn primary" type="submit" disabled={saving}>
+            {saving ? "Saving..." : "Send Reference"}
           </button>
-
         </form>
       </div>
     </section>
