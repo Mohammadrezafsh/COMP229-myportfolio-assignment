@@ -1,5 +1,6 @@
 import { useState } from "react";
 import CrudManager from "../components/CrudManager";
+import { useAuth } from "../context/AuthContext";
 
 const tabs = [
   { key: "projects", label: "Projects" },
@@ -10,6 +11,7 @@ const tabs = [
 
 export default function Dashboard() {
   const [activeTab, setActiveTab] = useState("projects");
+  const { user } = useAuth();
 
   return (
     <section className="container">
@@ -18,6 +20,9 @@ export default function Dashboard() {
         <p className="muted">
           This page manages users, projects, services, and references using the backend API.
         </p>
+        {user ? (
+          <p className="muted small">Signed in as {user.firstname} {user.lastname} ({user.email})</p>
+        ) : null}
       </header>
 
       <div className="dashboardTabs">

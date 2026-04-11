@@ -6,11 +6,20 @@
  * Date: February 2026
  */
 
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import logo from "../assets/logo.ico";
+import { useAuth } from "../context/AuthContext";
 
 // Navbar component - main navigation with logo and links to all pages
 export default function Navbar() {
+  const navigate = useNavigate();
+  const { isAuthenticated, signOut } = useAuth();
+
+  function handleSignOut() {
+    signOut();
+    navigate("/signin");
+  }
+
   return (
     <header className="navWrap">
       <div className="navInner">
@@ -47,12 +56,34 @@ export default function Navbar() {
           >
             Contact
           </NavLink>
-          <NavLink
-            to="/dashboard"
-            className={({ isActive }) => (isActive ? "link active" : "link")}
-          >
-            Dashboard
-          </NavLink>
+          {isAuthenticated ? (
+            <>
+              <NavLink
+                to="/dashboard"
+                className={({ isActive }) => (isActive ? "link active" : "link")}
+              >
+                Dashboard
+              </NavLink>
+              <button type="button" className="link navButton" onClick={handleSignOut}>
+                Sign Out
+              </button>
+            </>
+          ) : (
+            <>
+              <NavLink
+                to="/signin"
+                className={({ isActive }) => (isActive ? "link active" : "link")}
+              >
+                Sign In
+              </NavLink>
+              <NavLink
+                to="/signup"
+                className={({ isActive }) => (isActive ? "link active" : "link")}
+              >
+                Sign Up
+              </NavLink>
+            </>
+          )}
         </nav>
       </div>
     </header>

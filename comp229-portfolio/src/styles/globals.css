@@ -185,6 +185,19 @@ h1, h2, h3, h4, h5, h6 {
   transform: scaleX(1);
 }
 
+.navButton {
+  font: inherit;
+  cursor: pointer;
+  background: rgba(239, 68, 68, 0.15);
+  border-color: rgba(239, 68, 68, 0.3);
+  color: #fecaca;
+}
+
+.navButton:hover {
+  background: rgba(239, 68, 68, 0.22);
+  border-color: rgba(239, 68, 68, 0.5);
+}
+
 /* Page Header Styles */
 .pageHeader { 
   margin-bottom: 32px;
@@ -705,6 +718,28 @@ textarea {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 12px;
+}
+
+.authWrap {
+  max-width: 760px;
+}
+
+.authCard {
+  display: grid;
+  gap: 18px;
+}
+
+.authSwitch {
+  margin-top: 2px;
+}
+
+.authSwitch a {
+  color: var(--accent2);
+  font-weight: 600;
+}
+
+.authSwitch a:hover {
+  color: #67e8f9;
 }
 
 /* Footer Styles */

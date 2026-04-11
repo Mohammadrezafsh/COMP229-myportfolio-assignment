@@ -16,6 +16,9 @@ import Projects from "./pages/Projects";
 import Services from "./pages/Services";
 import Contact from "./pages/Contact";
 import Dashboard from "./pages/Dashboard";
+import SignIn from "./pages/SignIn";
+import SignUp from "./pages/SignUp";
+import ProtectedRoute from "./components/auth/ProtectedRoute";
 
 // Main App component - contains layout structure and routing
 export default function App() {
@@ -30,7 +33,16 @@ export default function App() {
           <Route path="/projects" element={<Projects />} />
           <Route path="/services" element={<Services />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/signin" element={<SignIn />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route
+            path="/dashboard"
+            element={(
+              <ProtectedRoute>
+                <Dashboard />
+              </ProtectedRoute>
+            )}
+          />
         </Routes>
       </main>
 

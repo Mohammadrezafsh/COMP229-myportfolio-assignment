@@ -213,6 +213,8 @@ export default function CrudManager({
 
       if (lowerMessage.includes("too large") || lowerMessage.includes("entity")) {
         setError("Image payload is too large for the server. Try a smaller image and save again.");
+      } else if (lowerMessage.includes("token") || lowerMessage.includes("auth")) {
+        setError("Your session is missing or expired. Sign in again to continue.");
       } else {
         setError(err.message);
       }
@@ -232,7 +234,12 @@ export default function CrudManager({
       setNotice(`${title} removed successfully.`);
       await loadItems();
     } catch (err) {
-      setError(err.message);
+      const lowerMessage = String(err.message || "").toLowerCase();
+      if (lowerMessage.includes("token") || lowerMessage.includes("auth")) {
+        setError("Your session is missing or expired. Sign in again to continue.");
+      } else {
+        setError(err.message);
+      }
     }
   }
 

@@ -7,7 +7,7 @@
  */
 
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { createItem } from "../api/api";
 
 // Contact component - displays contact info and handles form submission to backend
@@ -46,7 +46,12 @@ export default function Contact() {
         state: { message: "Thank you. Your reference entry was saved successfully." },
       });
     } catch (err) {
-      setError(err.message);
+      const message = String(err.message || "");
+      if (message.toLowerCase().includes("token") || message.toLowerCase().includes("auth")) {
+        setError("You must sign in before submitting a reference.");
+      } else {
+        setError(err.message);
+      }
     } finally {
       setSaving(false);
     }
@@ -78,6 +83,9 @@ export default function Contact() {
 
         <form className="card formCard" onSubmit={handleSubmit}>
           {error ? <div className="errorBox">{error}</div> : null}
+          {error === "You must sign in before submitting a reference." ? (
+            <p className="muted small">Go to <Link to="/signin">Sign In</Link> and try again.</p>
+          ) : null}
 
           <div className="twoCol">
             <div className="field">

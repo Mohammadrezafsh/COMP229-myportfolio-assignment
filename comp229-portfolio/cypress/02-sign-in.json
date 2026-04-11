@@ -1,0 +1,11 @@
+{
+  "name": "Sign In",
+  "description": "Authenticate existing user and store token in frontend",
+  "steps": [
+    { "action": "visit", "target": "/signin" },
+    { "action": "type", "target": "#signin-email", "value": "testuser@example.com" },
+    { "action": "type", "target": "#signin-password", "value": "Passw0rd!" },
+    { "action": "click", "target": "button[type='submit']" },
+    { "action": "assert-url-contains", "target": "/dashboard" }
+  ]
+}

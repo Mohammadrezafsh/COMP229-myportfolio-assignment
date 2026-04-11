@@ -1,0 +1,9 @@
+{
+  "name": "Sign Out",
+  "description": "Sign out and verify protected route redirects to sign in",
+  "steps": [
+    { "action": "visit", "target": "/dashboard" },
+    { "action": "click", "target": "button.navButton" },
+    { "action": "assert-url-contains", "target": "/signin" }
+  ]
+}

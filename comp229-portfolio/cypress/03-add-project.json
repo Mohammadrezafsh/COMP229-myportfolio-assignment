@@ -1,0 +1,13 @@
+{
+  "name": "Add Project",
+  "description": "Add one project from dashboard using protected endpoint",
+  "steps": [
+    { "action": "visit", "target": "/dashboard" },
+    { "action": "click", "target": "button.tabButton" },
+    { "action": "type", "target": "#projects-title", "value": "Cypress Project" },
+    { "action": "type", "target": "#projects-completion", "value": "2026-04-11" },
+    { "action": "type", "target": "#projects-description", "value": "Project created during Cypress flow." },
+    { "action": "click", "target": "button[type='submit']" },
+    { "action": "assert-text-contains", "target": ".notice", "value": "added successfully" }
+  ]
+}

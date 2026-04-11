@@ -6,7 +6,7 @@
  * Date: February 2026
  */
 
-import { useEffect, useState } from "react";
+import { memo, useEffect, useMemo, useState } from "react";
 import { getItems } from "../api/api";
 
 const PROJECT_PLACEHOLDER_IMAGE =
@@ -48,6 +48,30 @@ function getProjectImageSource(project) {
   return isUsableImageSource(candidate) ? candidate : PROJECT_PLACEHOLDER_IMAGE;
 }
 
+const ProjectCard = memo(function ProjectCard({ project }) {
+  return (
+    <article className="card projectCard">
+      <img
+        className="projectImg"
+        src={getProjectImageSource(project)}
+        alt={project.title}
+        loading="lazy"
+        decoding="async"
+        onError={(event) => {
+          event.currentTarget.src = PROJECT_PLACEHOLDER_IMAGE;
+        }}
+      />
+      <div className="projectBody">
+        <h3>{project.title}</h3>
+        <p className="muted small projectMeta">
+          <strong>Completion:</strong> {String(project.completion).slice(0, 10)}
+        </p>
+        <p>{project.description}</p>
+      </div>
+    </article>
+  );
+});
+
 // Projects component - renders project data from backend
 export default function Projects() {
   const [projects, setProjects] = useState([]);
@@ -69,6 +93,11 @@ export default function Projects() {
     loadProjects();
   }, []);
 
+  const projectCards = useMemo(
+    () => projects.map((project) => <ProjectCard key={project.id} project={project} />),
+    [projects]
+  );
+
   return (
     <section className="container">
       <header className="pageHeader">
@@ -84,25 +113,7 @@ export default function Projects() {
       {!loading && !error ? (
         <div className="grid3">
           {projects.length > 0 ? (
-            projects.map((project) => (
-              <article key={project.id} className="card projectCard">
-                <img
-                  className="projectImg"
-                  src={getProjectImageSource(project)}
-                  alt={project.title}
-                  onError={(event) => {
-                    event.currentTarget.src = PROJECT_PLACEHOLDER_IMAGE;
-                  }}
-                />
-                <div className="projectBody">
-                  <h3>{project.title}</h3>
-                  <p className="muted small projectMeta">
-                    <strong>Completion:</strong> {String(project.completion).slice(0, 10)}
-                  </p>
-                  <p>{project.description}</p>
-                </div>
-              </article>
-            ))
+            projectCards
           ) : (
             <div className="card">No projects available yet.</div>
           )}

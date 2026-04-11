@@ -1,0 +1,12 @@
+{
+  "name": "Edit Project",
+  "description": "Edit an existing project from dashboard using protected endpoint",
+  "steps": [
+    { "action": "visit", "target": "/dashboard" },
+    { "action": "click", "target": "button:contains('Edit')" },
+    { "action": "clear", "target": "#projects-description" },
+    { "action": "type", "target": "#projects-description", "value": "Updated by Cypress edit flow." },
+    { "action": "click", "target": "button[type='submit']" },
+    { "action": "assert-text-contains", "target": ".notice", "value": "updated successfully" }
+  ]
+}

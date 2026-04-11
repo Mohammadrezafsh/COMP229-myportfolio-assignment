@@ -1,0 +1,13 @@
+{
+  "name": "Sign Up",
+  "description": "Create a new user account from frontend sign up form",
+  "steps": [
+    { "action": "visit", "target": "/signup" },
+    { "action": "type", "target": "#signup-firstname", "value": "Test" },
+    { "action": "type", "target": "#signup-lastname", "value": "User" },
+    { "action": "type", "target": "#signup-email", "value": "testuser@example.com" },
+    { "action": "type", "target": "#signup-password", "value": "Passw0rd!" },
+    { "action": "click", "target": "button[type='submit']" },
+    { "action": "assert-url-contains", "target": "/dashboard" }
+  ]
+}
