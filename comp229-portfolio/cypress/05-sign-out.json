@@ -1,9 +1,127 @@
 {
-  "name": "Sign Out",
-  "description": "Sign out and verify protected route redirects to sign in",
-  "steps": [
-    { "action": "visit", "target": "/dashboard" },
-    { "action": "click", "target": "button.navButton" },
-    { "action": "assert-url-contains", "target": "/signin" }
-  ]
+    "title": "Sign Out",
+    "steps": [
+        {
+            "type": "setViewport",
+            "width": 1694,
+            "height": 1046,
+            "deviceScaleFactor": 1,
+            "isMobile": false,
+            "hasTouch": false,
+            "isLandscape": false
+        },
+        {
+            "type": "navigate",
+            "url": "https://comp-229-myportfolio-assignment.vercel.app/",
+            "assertedEvents": [
+                {
+                    "type": "navigation",
+                    "url": "https://comp-229-myportfolio-assignment.vercel.app/",
+                    "title": "Mohammad Reza Faghih Shojaei | Portfolio"
+                }
+            ]
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Dashboard"
+                ],
+                [
+                    "a:nth-of-type(6)"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/header/div/nav/a[6]"
+                ],
+                [
+                    "pierce/a:nth-of-type(6)"
+                ],
+                [
+                    "text/Dashboard"
+                ]
+            ],
+            "offsetY": 17.796875,
+            "offsetX": 73.671875
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#root > div"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div"
+                ],
+                [
+                    "pierce/#root > div"
+                ]
+            ],
+            "offsetY": 90,
+            "offsetX": 1457,
+            "duration": 935.2999999970198
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Sign Out"
+                ],
+                [
+                    "header button"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/header/div/nav/button"
+                ],
+                [
+                    "pierce/header button"
+                ],
+                [
+                    "text/Sign Out"
+                ]
+            ],
+            "offsetY": 19.796875,
+            "offsetX": 29.28125
+        },
+        {
+            "type": "change",
+            "value": "mreza.fsh5@gmail.com",
+            "selectors": [
+                [
+                    "aria/Email"
+                ],
+                [
+                    "#signin-email"
+                ],
+                [
+                    "xpath///*[@id=\"signin-email\"]"
+                ],
+                [
+                    "pierce/#signin-email"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "change",
+            "value": "qwer1234",
+            "selectors": [
+                [
+                    "aria/Password"
+                ],
+                [
+                    "#signin-password"
+                ],
+                [
+                    "xpath///*[@id=\"signin-password\"]"
+                ],
+                [
+                    "pierce/#signin-password"
+                ]
+            ],
+            "target": "main"
+        }
+    ]
 }

@@ -1,13 +1,357 @@
 {
-  "name": "Sign Up",
-  "description": "Create a new user account from frontend sign up form",
-  "steps": [
-    { "action": "visit", "target": "/signup" },
-    { "action": "type", "target": "#signup-firstname", "value": "Test" },
-    { "action": "type", "target": "#signup-lastname", "value": "User" },
-    { "action": "type", "target": "#signup-email", "value": "testuser@example.com" },
-    { "action": "type", "target": "#signup-password", "value": "Passw0rd!" },
-    { "action": "click", "target": "button[type='submit']" },
-    { "action": "assert-url-contains", "target": "/dashboard" }
-  ]
+    "title": "Sign up",
+    "steps": [
+        {
+            "type": "setViewport",
+            "width": 1135,
+            "height": 1318,
+            "deviceScaleFactor": 1,
+            "isMobile": false,
+            "hasTouch": false,
+            "isLandscape": false
+        },
+        {
+            "type": "navigate",
+            "url": "https://comp-229-myportfolio-assignment.vercel.app/",
+            "assertedEvents": [
+                {
+                    "type": "navigation",
+                    "url": "https://comp-229-myportfolio-assignment.vercel.app/",
+                    "title": "Mohammad Reza Faghih Shojaei | Portfolio"
+                }
+            ]
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Sign Up"
+                ],
+                [
+                    "a:nth-of-type(7)"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/header/div/nav/a[7]"
+                ],
+                [
+                    "pierce/a:nth-of-type(7)"
+                ],
+                [
+                    "text/Sign Up"
+                ]
+            ],
+            "offsetY": 23.15625,
+            "offsetX": 35.6875
+        },
+        {
+            "type": "change",
+            "value": "mreza.fsh5@gmail.com",
+            "selectors": [
+                [
+                    "aria/Email"
+                ],
+                [
+                    "#signup-email"
+                ],
+                [
+                    "xpath///*[@id=\"signup-email\"]"
+                ],
+                [
+                    "pierce/#signup-email"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "change",
+            "value": "qwer1234",
+            "selectors": [
+                [
+                    "aria/Password"
+                ],
+                [
+                    "#signup-password"
+                ],
+                [
+                    "xpath///*[@id=\"signup-password\"]"
+                ],
+                [
+                    "pierce/#signup-password"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/First Name"
+                ],
+                [
+                    "#signup-firstname"
+                ],
+                [
+                    "xpath///*[@id=\"signup-firstname\"]"
+                ],
+                [
+                    "pierce/#signup-firstname"
+                ]
+            ],
+            "offsetY": 28.378173828125,
+            "offsetX": 201.5
+        },
+        {
+            "type": "change",
+            "value": "S",
+            "selectors": [
+                [
+                    "aria/First Name"
+                ],
+                [
+                    "#signup-firstname"
+                ],
+                [
+                    "xpath///*[@id=\"signup-firstname\"]"
+                ],
+                [
+                    "pierce/#signup-firstname"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "keyUp",
+            "key": "s",
+            "target": "main"
+        },
+        {
+            "type": "change",
+            "value": "Sign U",
+            "selectors": [
+                [
+                    "aria/First Name"
+                ],
+                [
+                    "#signup-firstname"
+                ],
+                [
+                    "xpath///*[@id=\"signup-firstname\"]"
+                ],
+                [
+                    "pierce/#signup-firstname"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "keyUp",
+            "key": "u",
+            "target": "main"
+        },
+        {
+            "type": "change",
+            "value": "Sign Up ",
+            "selectors": [
+                [
+                    "aria/First Name"
+                ],
+                [
+                    "#signup-firstname"
+                ],
+                [
+                    "xpath///*[@id=\"signup-firstname\"]"
+                ],
+                [
+                    "pierce/#signup-firstname"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "keyDown",
+            "target": "main",
+            "key": "Shift"
+        },
+        {
+            "type": "keyUp",
+            "key": "Shift",
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Last Name"
+                ],
+                [
+                    "#signup-lastname"
+                ],
+                [
+                    "xpath///*[@id=\"signup-lastname\"]"
+                ],
+                [
+                    "pierce/#signup-lastname"
+                ]
+            ],
+            "offsetY": 23.80523681640625,
+            "offsetX": 207.5
+        },
+        {
+            "type": "change",
+            "value": "Test",
+            "selectors": [
+                [
+                    "aria/Last Name"
+                ],
+                [
+                    "#signup-lastname"
+                ],
+                [
+                    "xpath///*[@id=\"signup-lastname\"]"
+                ],
+                [
+                    "pierce/#signup-lastname"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Email"
+                ],
+                [
+                    "#signup-email"
+                ],
+                [
+                    "xpath///*[@id=\"signup-email\"]"
+                ],
+                [
+                    "pierce/#signup-email"
+                ],
+                [
+                    "text/mreza.fsh5@gmail.com"
+                ]
+            ],
+            "offsetY": 22.78125,
+            "offsetX": 4.5,
+            "duration": 425.1000000014901
+        },
+        {
+            "type": "change",
+            "value": "mreza.fshh@",
+            "selectors": [
+                [
+                    "aria/Email"
+                ],
+                [
+                    "#signup-email"
+                ],
+                [
+                    "xpath///*[@id=\"signup-email\"]"
+                ],
+                [
+                    "pierce/#signup-email"
+                ],
+                [
+                    "text/mreza.fsh5@gmail.com"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "keyUp",
+            "key": "2",
+            "target": "main"
+        },
+        {
+            "type": "change",
+            "value": "mreza.fshh@gmail.com",
+            "selectors": [
+                [
+                    "aria/Email"
+                ],
+                [
+                    "#signup-email"
+                ],
+                [
+                    "xpath///*[@id=\"signup-email\"]"
+                ],
+                [
+                    "pierce/#signup-email"
+                ],
+                [
+                    "text/mreza.fsh5@gmail.com"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "main"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main"
+                ],
+                [
+                    "pierce/main"
+                ]
+            ],
+            "offsetY": 508,
+            "offsetX": 114
+        },
+        {
+            "type": "change",
+            "value": "qwerqwer",
+            "selectors": [
+                [
+                    "aria/Password"
+                ],
+                [
+                    "#signup-password"
+                ],
+                [
+                    "xpath///*[@id=\"signup-password\"]"
+                ],
+                [
+                    "pierce/#signup-password"
+                ],
+                [
+                    "text/qwer1234"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Create Account"
+                ],
+                [
+                    "button"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/form/button"
+                ],
+                [
+                    "pierce/button"
+                ],
+                [
+                    "text/Create Account"
+                ]
+            ],
+            "offsetY": 7.46807861328125,
+            "offsetX": 191.5
+        }
+    ]
 }

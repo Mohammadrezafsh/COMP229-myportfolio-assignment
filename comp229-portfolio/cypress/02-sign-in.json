@@ -1,11 +1,185 @@
 {
-  "name": "Sign In",
-  "description": "Authenticate existing user and store token in frontend",
-  "steps": [
-    { "action": "visit", "target": "/signin" },
-    { "action": "type", "target": "#signin-email", "value": "testuser@example.com" },
-    { "action": "type", "target": "#signin-password", "value": "Passw0rd!" },
-    { "action": "click", "target": "button[type='submit']" },
-    { "action": "assert-url-contains", "target": "/dashboard" }
-  ]
+    "title": "Sign In",
+    "steps": [
+        {
+            "type": "setViewport",
+            "width": 1135,
+            "height": 1318,
+            "deviceScaleFactor": 1,
+            "isMobile": false,
+            "hasTouch": false,
+            "isLandscape": false
+        },
+        {
+            "type": "navigate",
+            "url": "https://comp-229-myportfolio-assignment.vercel.app/",
+            "assertedEvents": [
+                {
+                    "type": "navigation",
+                    "url": "https://comp-229-myportfolio-assignment.vercel.app/",
+                    "title": "Mohammad Reza Faghih Shojaei | Portfolio"
+                }
+            ]
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Sign In"
+                ],
+                [
+                    "a:nth-of-type(6)"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/header/div/nav/a[6]"
+                ],
+                [
+                    "pierce/a:nth-of-type(6)"
+                ],
+                [
+                    "text/Sign In"
+                ]
+            ],
+            "offsetY": 40.15625,
+            "offsetX": 36.453125
+        },
+        {
+            "type": "change",
+            "value": "mreza.fsh5@gmail.com",
+            "selectors": [
+                [
+                    "aria/Email"
+                ],
+                [
+                    "#signin-email"
+                ],
+                [
+                    "xpath///*[@id=\"signin-email\"]"
+                ],
+                [
+                    "pierce/#signin-email"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "change",
+            "value": "qwer1234",
+            "selectors": [
+                [
+                    "aria/Password"
+                ],
+                [
+                    "#signin-password"
+                ],
+                [
+                    "xpath///*[@id=\"signin-password\"]"
+                ],
+                [
+                    "pierce/#signin-password"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "main"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main"
+                ],
+                [
+                    "pierce/main"
+                ]
+            ],
+            "offsetY": 254,
+            "offsetX": 173,
+            "duration": 497.1000000014901
+        },
+        {
+            "type": "change",
+            "value": "mreza.fshh@gmail.com",
+            "selectors": [
+                [
+                    "aria/Email"
+                ],
+                [
+                    "#signin-email"
+                ],
+                [
+                    "xpath///*[@id=\"signin-email\"]"
+                ],
+                [
+                    "pierce/#signin-email"
+                ],
+                [
+                    "text/mreza.fsh5@gmail.com"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "main"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main"
+                ],
+                [
+                    "pierce/main"
+                ]
+            ],
+            "offsetY": 366,
+            "offsetX": 101
+        },
+        {
+            "type": "change",
+            "value": "qwerqwer",
+            "selectors": [
+                [
+                    "aria/Password"
+                ],
+                [
+                    "#signin-password"
+                ],
+                [
+                    "xpath///*[@id=\"signin-password\"]"
+                ],
+                [
+                    "pierce/#signin-password"
+                ],
+                [
+                    "text/qwer1234"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Sign In[role=\"button\"]"
+                ],
+                [
+                    "button"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/form/button"
+                ],
+                [
+                    "pierce/button"
+                ]
+            ],
+            "offsetY": 9.643402099609375,
+            "offsetX": 252.5
+        }
+    ]
 }

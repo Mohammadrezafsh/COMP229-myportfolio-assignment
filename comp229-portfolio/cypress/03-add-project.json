@@ -1,13 +1,579 @@
 {
-  "name": "Add Project",
-  "description": "Add one project from dashboard using protected endpoint",
-  "steps": [
-    { "action": "visit", "target": "/dashboard" },
-    { "action": "click", "target": "button.tabButton" },
-    { "action": "type", "target": "#projects-title", "value": "Cypress Project" },
-    { "action": "type", "target": "#projects-completion", "value": "2026-04-11" },
-    { "action": "type", "target": "#projects-description", "value": "Project created during Cypress flow." },
-    { "action": "click", "target": "button[type='submit']" },
-    { "action": "assert-text-contains", "target": ".notice", "value": "added successfully" }
-  ]
+    "title": "Add Project",
+    "steps": [
+        {
+            "type": "setViewport",
+            "width": 1135,
+            "height": 1318,
+            "deviceScaleFactor": 1,
+            "isMobile": false,
+            "hasTouch": false,
+            "isLandscape": false
+        },
+        {
+            "type": "navigate",
+            "url": "https://comp-229-myportfolio-assignment.vercel.app/",
+            "assertedEvents": [
+                {
+                    "type": "navigation",
+                    "url": "https://comp-229-myportfolio-assignment.vercel.app/",
+                    "title": "Mohammad Reza Faghih Shojaei | Portfolio"
+                }
+            ]
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Sign In"
+                ],
+                [
+                    "a:nth-of-type(6)"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/header/div/nav/a[6]"
+                ],
+                [
+                    "pierce/a:nth-of-type(6)"
+                ],
+                [
+                    "text/Sign In"
+                ]
+            ],
+            "offsetY": 38.15625,
+            "offsetX": 46.453125
+        },
+        {
+            "type": "change",
+            "value": "mreza.fsh5@gmail.com",
+            "selectors": [
+                [
+                    "aria/Email"
+                ],
+                [
+                    "#signin-email"
+                ],
+                [
+                    "xpath///*[@id=\"signin-email\"]"
+                ],
+                [
+                    "pierce/#signin-email"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "change",
+            "value": "qwer1234",
+            "selectors": [
+                [
+                    "aria/Password"
+                ],
+                [
+                    "#signin-password"
+                ],
+                [
+                    "xpath///*[@id=\"signin-password\"]"
+                ],
+                [
+                    "pierce/#signin-password"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Sign In[role=\"button\"]"
+                ],
+                [
+                    "button"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/form/button"
+                ],
+                [
+                    "pierce/button"
+                ]
+            ],
+            "offsetY": 11.78125,
+            "offsetX": 314.5,
+            "duration": 396.70000000298023
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Projects[role=\"button\"]"
+                ],
+                [
+                    "button.activeTab"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div/button[1]"
+                ],
+                [
+                    "pierce/button.activeTab"
+                ]
+            ],
+            "offsetY": 22.015625,
+            "offsetX": 75
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Title"
+                ],
+                [
+                    "#projects-title"
+                ],
+                [
+                    "xpath///*[@id=\"projects-title\"]"
+                ],
+                [
+                    "pierce/#projects-title"
+                ]
+            ],
+            "offsetY": 6.70623779296875,
+            "offsetX": 126
+        },
+        {
+            "type": "change",
+            "value": "T",
+            "selectors": [
+                [
+                    "aria/Title"
+                ],
+                [
+                    "#projects-title"
+                ],
+                [
+                    "xpath///*[@id=\"projects-title\"]"
+                ],
+                [
+                    "pierce/#projects-title"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "keyUp",
+            "key": "t",
+            "target": "main"
+        },
+        {
+            "type": "change",
+            "value": "Test",
+            "selectors": [
+                [
+                    "aria/Title"
+                ],
+                [
+                    "#projects-title"
+                ],
+                [
+                    "xpath///*[@id=\"projects-title\"]"
+                ],
+                [
+                    "pierce/#projects-title"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Completion Date"
+                ],
+                [
+                    "#projects-completion"
+                ],
+                [
+                    "xpath///*[@id=\"projects-completion\"]"
+                ],
+                [
+                    "pierce/#projects-completion"
+                ]
+            ],
+            "offsetY": 32.1356201171875,
+            "offsetX": 233
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Completion Date"
+                ],
+                [
+                    "#projects-completion"
+                ],
+                [
+                    "xpath///*[@id=\"projects-completion\"]"
+                ],
+                [
+                    "pierce/#projects-completion"
+                ]
+            ],
+            "offsetY": 33.578125,
+            "offsetX": 57
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Completion Date"
+                ],
+                [
+                    "#projects-completion"
+                ],
+                [
+                    "xpath///*[@id=\"projects-completion\"]"
+                ],
+                [
+                    "pierce/#projects-completion"
+                ]
+            ],
+            "offsetY": 26.989166259765625,
+            "offsetX": 462
+        },
+        {
+            "type": "change",
+            "value": "2026-04-01",
+            "selectors": [
+                [
+                    "aria/Completion Date"
+                ],
+                [
+                    "#projects-completion"
+                ],
+                [
+                    "xpath///*[@id=\"projects-completion\"]"
+                ],
+                [
+                    "pierce/#projects-completion"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Description"
+                ],
+                [
+                    "#projects-description"
+                ],
+                [
+                    "xpath///*[@id=\"projects-description\"]"
+                ],
+                [
+                    "pierce/#projects-description"
+                ]
+            ],
+            "offsetY": 24.73114013671875,
+            "offsetX": 57
+        },
+        {
+            "type": "change",
+            "value": "Test T",
+            "selectors": [
+                [
+                    "aria/Description"
+                ],
+                [
+                    "#projects-description"
+                ],
+                [
+                    "xpath///*[@id=\"projects-description\"]"
+                ],
+                [
+                    "pierce/#projects-description"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "keyUp",
+            "key": "t",
+            "target": "main"
+        },
+        {
+            "type": "change",
+            "value": "Test Test",
+            "selectors": [
+                [
+                    "aria/Description"
+                ],
+                [
+                    "#projects-description"
+                ],
+                [
+                    "xpath///*[@id=\"projects-description\"]"
+                ],
+                [
+                    "pierce/#projects-description"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Project Image: No file chosen"
+                ],
+                [
+                    "#projects-imageUrl"
+                ],
+                [
+                    "xpath///*[@id=\"projects-imageUrl\"]"
+                ],
+                [
+                    "pierce/#projects-imageUrl"
+                ]
+            ],
+            "offsetY": 34.953125,
+            "offsetX": 74
+        },
+        {
+            "type": "change",
+            "value": "C:\\fakepath\\images.jpg",
+            "selectors": [
+                [
+                    "aria/Project Image: images.jpg"
+                ],
+                [
+                    "#projects-imageUrl"
+                ],
+                [
+                    "xpath///*[@id=\"projects-imageUrl\"]"
+                ],
+                [
+                    "pierce/#projects-imageUrl"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Add Project"
+                ],
+                [
+                    "form button"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/section/form/div[2]/button"
+                ],
+                [
+                    "pierce/form button"
+                ],
+                [
+                    "text/Add Project"
+                ]
+            ],
+            "offsetY": 23.21875,
+            "offsetX": 90
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "article:nth-of-type(5) > div.dashboardItemBody"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/section/div[3]/article[5]/div[1]"
+                ],
+                [
+                    "pierce/article:nth-of-type(5) > div.dashboardItemBody"
+                ]
+            ],
+            "offsetY": 61.11572265625,
+            "offsetX": 305
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Primary"
+                ],
+                [
+                    "nav"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/header/div/nav"
+                ],
+                [
+                    "pierce/nav"
+                ],
+                [
+                    "text/HomeAboutProjectsServicesContactDashboardSign"
+                ]
+            ],
+            "offsetY": 15.796875,
+            "offsetX": 273.484375
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Projects[role=\"link\"]"
+                ],
+                [
+                    "a:nth-of-type(3)"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/header/div/nav/a[3]"
+                ],
+                [
+                    "pierce/a:nth-of-type(3)"
+                ]
+            ],
+            "offsetY": 19.55691909790039,
+            "offsetX": 86.875
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Sign Out"
+                ],
+                [
+                    "button"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/header/div/nav/button"
+                ],
+                [
+                    "pierce/button"
+                ],
+                [
+                    "text/Sign Out"
+                ]
+            ],
+            "offsetY": 33.796875,
+            "offsetX": 52.78125
+        },
+        {
+            "type": "change",
+            "value": "mreza.fsh5@gmail.com",
+            "selectors": [
+                [
+                    "aria/Email"
+                ],
+                [
+                    "#signin-email"
+                ],
+                [
+                    "xpath///*[@id=\"signin-email\"]"
+                ],
+                [
+                    "pierce/#signin-email"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "change",
+            "value": "qwer1234",
+            "selectors": [
+                [
+                    "aria/Password"
+                ],
+                [
+                    "#signin-password"
+                ],
+                [
+                    "xpath///*[@id=\"signin-password\"]"
+                ],
+                [
+                    "pierce/#signin-password"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Projects"
+                ],
+                [
+                    "a:nth-of-type(3)"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/header/div/nav/a[3]"
+                ],
+                [
+                    "pierce/a:nth-of-type(3)"
+                ],
+                [
+                    "text/Projects"
+                ]
+            ],
+            "offsetY": 31.15625,
+            "offsetX": 85.65625,
+            "duration": 533.8000000044703
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "span.brandName"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/header/div/a/div/span[1]"
+                ],
+                [
+                    "pierce/span.brandName"
+                ]
+            ],
+            "offsetY": 24.16531276702881,
+            "offsetX": 110.94844055175781
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/View projects"
+                ],
+                [
+                    "a.ghost"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div/div[1]/div/a[2]"
+                ],
+                [
+                    "pierce/a.ghost"
+                ],
+                [
+                    "text/View projects"
+                ]
+            ],
+            "offsetY": 28.237396240234375,
+            "offsetX": 124.15625
+        }
+    ]
 }

@@ -1,12 +1,386 @@
 {
-  "name": "Edit Project",
-  "description": "Edit an existing project from dashboard using protected endpoint",
-  "steps": [
-    { "action": "visit", "target": "/dashboard" },
-    { "action": "click", "target": "button:contains('Edit')" },
-    { "action": "clear", "target": "#projects-description" },
-    { "action": "type", "target": "#projects-description", "value": "Updated by Cypress edit flow." },
-    { "action": "click", "target": "button[type='submit']" },
-    { "action": "assert-text-contains", "target": ".notice", "value": "updated successfully" }
-  ]
+    "title": "Edit Project",
+    "steps": [
+        {
+            "type": "setViewport",
+            "width": 1694,
+            "height": 1046,
+            "deviceScaleFactor": 1,
+            "isMobile": false,
+            "hasTouch": false,
+            "isLandscape": false
+        },
+        {
+            "type": "navigate",
+            "url": "https://comp-229-myportfolio-assignment.vercel.app/",
+            "assertedEvents": [
+                {
+                    "type": "navigation",
+                    "url": "https://comp-229-myportfolio-assignment.vercel.app/",
+                    "title": "Mohammad Reza Faghih Shojaei | Portfolio"
+                }
+            ]
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Sign In"
+                ],
+                [
+                    "a:nth-of-type(6)"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/header/div/nav/a[6]"
+                ],
+                [
+                    "pierce/a:nth-of-type(6)"
+                ],
+                [
+                    "text/Sign In"
+                ]
+            ],
+            "offsetY": 39.15625,
+            "offsetX": 41.078125
+        },
+        {
+            "type": "change",
+            "value": "mreza.fsh5@gmail.com",
+            "selectors": [
+                [
+                    "aria/Email"
+                ],
+                [
+                    "#signin-email"
+                ],
+                [
+                    "xpath///*[@id=\"signin-email\"]"
+                ],
+                [
+                    "pierce/#signin-email"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "change",
+            "value": "qwer1234",
+            "selectors": [
+                [
+                    "aria/Password"
+                ],
+                [
+                    "#signin-password"
+                ],
+                [
+                    "xpath///*[@id=\"signin-password\"]"
+                ],
+                [
+                    "pierce/#signin-password"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Sign In[role=\"button\"]"
+                ],
+                [
+                    "button"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/form/button"
+                ],
+                [
+                    "pierce/button"
+                ]
+            ],
+            "offsetY": 8.681732177734375,
+            "offsetX": 368
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "article:nth-of-type(5) button.ghost"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/section/div[2]/article[5]/div[2]/button[1]"
+                ],
+                [
+                    "pierce/article:nth-of-type(5) button.ghost"
+                ]
+            ],
+            "offsetY": 45.34375,
+            "offsetX": 49.75
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Title"
+                ],
+                [
+                    "#projects-title"
+                ],
+                [
+                    "xpath///*[@id=\"projects-title\"]"
+                ],
+                [
+                    "pierce/#projects-title"
+                ]
+            ],
+            "offsetY": 40.22747802734375,
+            "offsetX": 196.5
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "form"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/section/form"
+                ],
+                [
+                    "pierce/form"
+                ]
+            ],
+            "offsetY": 113.296875,
+            "offsetX": 17.5,
+            "duration": 665.7000000029802
+        },
+        {
+            "type": "change",
+            "value": "Editing the T",
+            "selectors": [
+                [
+                    "aria/Title"
+                ],
+                [
+                    "#projects-title"
+                ],
+                [
+                    "xpath///*[@id=\"projects-title\"]"
+                ],
+                [
+                    "pierce/#projects-title"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "keyUp",
+            "key": "t",
+            "target": "main"
+        },
+        {
+            "type": "change",
+            "value": "Editing the Title",
+            "selectors": [
+                [
+                    "aria/Title"
+                ],
+                [
+                    "#projects-title"
+                ],
+                [
+                    "xpath///*[@id=\"projects-title\"]"
+                ],
+                [
+                    "pierce/#projects-title"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Completion Date"
+                ],
+                [
+                    "#projects-completion"
+                ],
+                [
+                    "xpath///*[@id=\"projects-completion\"]"
+                ],
+                [
+                    "pierce/#projects-completion"
+                ]
+            ],
+            "offsetY": 24.984375,
+            "offsetX": 632.5
+        },
+        {
+            "type": "change",
+            "value": "2026-04-13",
+            "selectors": [
+                [
+                    "aria/Completion Date"
+                ],
+                [
+                    "#projects-completion"
+                ],
+                [
+                    "xpath///*[@id=\"projects-completion\"]"
+                ],
+                [
+                    "pierce/#projects-completion"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "form"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/section/form"
+                ],
+                [
+                    "pierce/form"
+                ]
+            ],
+            "offsetY": 190.296875,
+            "offsetX": 6.5
+        },
+        {
+            "type": "change",
+            "value": "T",
+            "selectors": [
+                [
+                    "aria/Description"
+                ],
+                [
+                    "#projects-description"
+                ],
+                [
+                    "xpath///*[@id=\"projects-description\"]"
+                ],
+                [
+                    "pierce/#projects-description"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "keyUp",
+            "key": "t",
+            "target": "main"
+        },
+        {
+            "type": "change",
+            "value": "Testing the edit for project ",
+            "selectors": [
+                [
+                    "aria/Description"
+                ],
+                [
+                    "#projects-description"
+                ],
+                [
+                    "xpath///*[@id=\"projects-description\"]"
+                ],
+                [
+                    "pierce/#projects-description"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Project Image: No file chosen"
+                ],
+                [
+                    "#projects-imageUrl"
+                ],
+                [
+                    "xpath///*[@id=\"projects-imageUrl\"]"
+                ],
+                [
+                    "pierce/#projects-imageUrl"
+                ]
+            ],
+            "offsetY": 35.359375,
+            "offsetX": 88.5
+        },
+        {
+            "type": "change",
+            "value": "C:\\fakepath\\FN3QVF1M6NMU1PW.webp",
+            "selectors": [
+                [
+                    "aria/Project Image: FN3QVF1M6NMU1PW.webp"
+                ],
+                [
+                    "#projects-imageUrl"
+                ],
+                [
+                    "xpath///*[@id=\"projects-imageUrl\"]"
+                ],
+                [
+                    "pierce/#projects-imageUrl"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Update Project"
+                ],
+                [
+                    "button.primary"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/section/form/div[2]/button[1]"
+                ],
+                [
+                    "pierce/button.primary"
+                ],
+                [
+                    "text/Update Project"
+                ]
+            ],
+            "offsetY": 22.359375,
+            "offsetX": 96.5
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Projects[role=\"link\"]"
+                ],
+                [
+                    "a:nth-of-type(3)"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/header/div/nav/a[3]"
+                ],
+                [
+                    "pierce/a:nth-of-type(3)"
+                ]
+            ],
+            "offsetY": 27.796875,
+            "offsetX": 70.375,
+            "duration": 479.59999999403954
+        }
+    ]
 }
